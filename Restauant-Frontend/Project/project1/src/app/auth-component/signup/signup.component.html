@@ -1,0 +1,38 @@
+<h1>REGISTRATION</h1>
+<div  class="container">
+    <form [formGroup]="validateForm">
+        <div class="formGroup">
+            <label>Name</label>
+            <input type="text" formControlName="username" placeholder="Enter the name" name="name"class="form-control" required>
+            <span *ngIf="validateForm.controls['username'].errors?.['required']">Name is Empty</span>
+            <span *ngIf="validateForm.controls['username'].errors?.['minlength'] ">Name needs a minimum length of 10</span>
+            <span *ngIf="validateForm.controls['username'].errors?.['maxlength'] ">Name needs a maximum length of 30</span>
+        </div>
+
+        <div class="formGroup">
+            <label >Email</label>
+            <input type="email" formControlName="email" placeholder="Enter the valid email" class="form-control" required>
+            <span  *ngIf="validateForm.controls['email'].errors?.['required']">Email is Empty</span>
+            <span  *ngIf="validateForm.controls['email'].errors?.['email']">Email should be in the formate of xxx@gmail.com </span>
+ 
+        </div>
+
+        <div class="formGroup">
+            <label >Password</label>
+            <input type="password" formControlName="password" placeholder="Enter the password" class="form-control"required>
+            <span  *ngIf="validateForm.controls['password'].errors?.['required']">Password is Empty</span>
+            <!-- <span  *ngIf="validateForm.controls['password'].errors?.['pattern']">Password should satisfy the pattern</span> -->
+ 
+        </div>
+
+        <div class="formGroup">
+            <label >Check Password</label>
+            <input type="password" formControlName="checkpassword" placeholder="Re Enter Password" class="form-control"required>
+            <span  *ngIf="validateForm.controls['checkpassword'].errors?.['required']">Password is Empty</span>
+            <span *ngIf="validateForm.controls['checkpassword'].hasError('confirmValidator')">Password is not the same</span>
+ 
+        </div>
+        
+        <button class="btn btn-primary" [disabled]="validateForm.invalid" (click)="register()">Register</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<!-- add-category.component.html -->
+<h2>Add Category</h2>
+<div class="container">
+  <form [formGroup]="categoryForm">
+    <div class="formGroup">
+      <label for="image" *ngIf="selectedFile">
+        <div class="circle-container">
+          <img [src]="imagePreview" class="profile" alt="profile">
+        </div>
+      </label>
+      <input type="file" id="upload_profile_image" accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)">
+    </div> <div class="formGroup">
+      <label for="name">Product Name:</label>
+      <input type="text" id="name" formControlName="name" name="name" required>
+      <span *ngIf="categoryForm.controls['name'].errors?.['required']">Product name is required.</span>
+    </div>
+    <div class="formGroup">
+      <label for="description">Product Description:</label>
+      <textarea formControlName="description" name="description" cols="30" rows="1"></textarea>
+      <span *ngIf="categoryForm.controls['description'].errors?.['required']">Product description is required.</span>
+    </div>
+    <button class="btn btn-primary" (click)="onUpload()">Add</button>
+  </form>
+</div>

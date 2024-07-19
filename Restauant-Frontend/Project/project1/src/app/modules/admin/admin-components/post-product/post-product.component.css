@@ -1,0 +1,14 @@
+.card-img-container {
+    justify-content: flex-start; /* Align items to the left */
+    height: 200px; /* Adjust height as needed */
+    border-radius: 20px;
+  }
+  
+  .card-img-top {
+    max-width: 100%; /* Ensure the image fills its container */
+    max-height: 100%; /* Ensure the image maintains aspect ratio */
+    display: block; /* Ensure the image behaves like a block element */
+    border-radius: 8px; /* Rounded corners */
+    object-fit: contain; /* Ensure the image fits within its container */
+  }
+  

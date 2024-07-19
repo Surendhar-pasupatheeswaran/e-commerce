@@ -1,0 +1,51 @@
+
+    .video-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 20px;
+        border: 2px solid #ccc;
+        width: 50%;
+      }
+      
+    .video-container video {
+      width: 100%;
+      height: 50%;
+      
+    }
+
+    .bent-corner {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-top: 2px solid #ccc;
+      border-right: 2px solid #ccc;
+      border-radius: 0 0 0 20px;
+      transform: rotate(45deg);
+    }
+
+    .bent-corner:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top: 2px solid #ccc;
+      border-right: 2px solid #ccc;
+      border-radius: 0 0 0 20px;
+      transform: rotate(-90deg);
+    }
+
+    .video-container video::-webkit-media-controls {
+      display:contents;
+    }
+
+    .video-container video {
+      pointer-events:visible;
+    }

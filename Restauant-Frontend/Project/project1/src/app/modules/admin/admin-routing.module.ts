@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './admin-components/dashboard/dashboard.component';
+import { AddCategoryComponent } from './admin-component/add-category/add-category.component';
+import { PostProductComponent } from './admin-components/post-product/post-product.component';
+
+const routes: Routes = [
+  {path:"dashboard",component:DashboardComponent},
+  {path:"category",component:AddCategoryComponent},
+  {path:":categoryId/product",component:PostProductComponent}
+
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class AdminRoutingModule { }

@@ -1,0 +1,47 @@
+<!-- add-category.component.html -->
+<div class="search-container">
+    <input [(ngModel)]="keyword" class="form-control" placeholder="Search for items" required>
+    <button (click)="search()" class="btn btn-primary" >Search</button>
+  </div>
+  
+  
+  <ul class="list-group">
+    <div *ngFor="let item of searchResults | filter:keyword" class="list-group-item">
+      <div class="card">
+        <a routerLink="/productDetails/{{item.id}}">
+          <img  [src]="getImageUrl(item.id)" alt="Product Image">
+        </a>
+  
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </ul>
+  
+  <!-- Rest of your HTML -->
+  <div class="container" *ngIf="showImages">
+    <!-- Use *ngIf to conditionally display the container -->
+    <div class="row">
+      <div *ngFor="let product of images" class="col-md-4 mb-4">
+        <div class="card">
+          <a routerLink="/productDetails/{{product.id}}">
+            <img [src]="getImageUrl(product.id)" class="card-img-top" alt="Product Image">
+          </a>
+  
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+  
+          <div class="card-footer">
+            <div class="btn-group" role="group" aria-label="Product Actions">
+              <button  (click)="viewProduct(product.id)" class="btn btn-primary" routerLink="/admin/{{ product.id }}/product">View Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

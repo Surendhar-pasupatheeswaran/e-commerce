@@ -1,0 +1,29 @@
+<h1>LOGIN</h1>
+<div  class="container">
+    <form [formGroup]="validate">
+        
+
+        <div class="formGroup">
+            <label >Email</label>
+            <input type="email" formControlName="email" placeholder="Enter the valid email" class="form-control" required>
+            <span  *ngIf="validate.controls['email'].errors?.['required']">Email is Empty</span>
+            <span  *ngIf="validate.controls['email'].errors?.['email']">Email should be in the formate of xxx@gmail.com </span>
+ 
+        </div>
+
+        <div class="formGroup">
+            <label >Password</label>
+            <input type="password" formControlName="password" placeholder="Enter the password" class="form-control"required>
+            <span  *ngIf="validate.controls['password'].errors?.['required']">Password is Empty</span>
+            <span  *ngIf="validate.controls['password'].errors?.['pattern']">Password should satisfy the pattern</span> 
+ 
+        </div>
+
+       
+        
+        <button class="btn btn-primary" [disabled]="validate.invalid" (click)="Login()">Login</button>
+        or
+        <button class="btn btn-primary"  (click)="register()">Register Now</button>
+
+    </form>
+</div>

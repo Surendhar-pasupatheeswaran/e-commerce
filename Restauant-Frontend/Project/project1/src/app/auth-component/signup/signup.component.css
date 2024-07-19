@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+    color: #3498db; /* Blue title */
+    margin-top: 20px;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  form {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .formGroup {
+    margin: 15px 0;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px;
+  }
+
+  .form-control:focus {
+    border-color: #3498db; /* Highlight border on focus */
+  }
+
+  span {
+    color: #e74c3c; /* Red error messages */
+  }
+
+  .btn {
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn:disabled {
+    background-color: #ccc; /* Disabled button color */
+    cursor: not-allowed;
+  }
